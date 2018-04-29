@@ -91,7 +91,7 @@ namespace Pytocs
                     fs.GetFileNameWithoutExtension(file),
                     fs,
                     new ConsoleLogger());
-                xlator.TranslateFile(file, file + ".cs");
+                xlator.TranslateFile(file, file.Substring(0, file.Length - 3) + ".cs");
             }
         }
     }
