@@ -51,6 +51,7 @@ namespace Pytocs.CodeModel
 
             { CodeOperatorType.Mul, 12 },
             { CodeOperatorType.Div, 12 },
+            { CodeOperatorType.FlooringDiv, 12 },
             { CodeOperatorType.Mod, 12 },
 
             { CodeOperatorType.Add, 11 },
@@ -89,6 +90,8 @@ namespace Pytocs.CodeModel
             { CodeOperatorType.AndEq, 1 },
             { CodeOperatorType.OrEq, 1 },
             { CodeOperatorType.DivEq, 1 },
+            { CodeOperatorType.FlooringDivEq, 1 },
+            { CodeOperatorType.ModEq, 12 },
             { CodeOperatorType.ShlEq, PrecAssignment },
             { CodeOperatorType.ShrEq, PrecAssignment },
             { CodeOperatorType.XorEq, PrecAssignment },
@@ -227,13 +230,16 @@ namespace Pytocs.CodeModel
             case CodeOperatorType.Assign: return ":=";
             case CodeOperatorType.Mul: return "*";
             case CodeOperatorType.Div: return "/";
+            case CodeOperatorType.FlooringDiv: return "//";
             case CodeOperatorType.Shl: return "<<";
             case CodeOperatorType.Shr: return ">>";
 
             case CodeOperatorType.AddEq: return "+=";
             case CodeOperatorType.SubEq: return "-=";
             case CodeOperatorType.MulEq: return "*=";
+            case CodeOperatorType.ModEq: return "%=";
             case CodeOperatorType.DivEq: return "/=";
+            case CodeOperatorType.FlooringDivEq: return "//=";
             case CodeOperatorType.OrEq: return "|=";
             case CodeOperatorType.AndEq: return "|=";
             case CodeOperatorType.ShlEq: return "<<=";

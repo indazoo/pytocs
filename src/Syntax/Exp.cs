@@ -82,7 +82,7 @@ namespace Pytocs.Syntax
             case Op.AugShl: return " <<= ";
             case Op.AugShr: return " >>= ";
             case Op.AugExp: return " **= ";
-            case Op.AugIDiv: return "@";
+            case Op.AugIDiv: return "//="; //case Op.AugIDiv: return "@";
             case Op.BitAnd: return "&";
             case Op.BitOr: return "|";
             case Op.Not: return "not ";
