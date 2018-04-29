@@ -42,14 +42,7 @@ namespace Pytocs.CodeModel
                     writer.Write(comment.Comment);
                     writer.WriteLine();
                 }
-                if (!string.IsNullOrEmpty(n.Name))
-                {
-                    writer.Write("namespace");
-                    writer.WriteName(" ");
-                    writer.WriteDottedName(n.Name);
-                    writer.WriteLine(" {");
-                    ++writer.IndentLevel;
-                }
+
                 foreach (var imp in n.Imports)
                 {
                     writer.WriteLine();
@@ -58,6 +51,17 @@ namespace Pytocs.CodeModel
                     writer.WriteDottedName(imp.Namespace);
                     writer.WriteLine(";");
                 }
+                writer.WriteLine();
+
+                if (!string.IsNullOrEmpty(n.Name))
+                {
+                    writer.Write("namespace");
+                    writer.WriteName(" ");
+                    writer.WriteDottedName(n.Name);
+                    writer.WriteLine(" {");
+                    ++writer.IndentLevel;
+                }
+
                 foreach (var type in n.Types)
                 {
                     writer.WriteLine();
